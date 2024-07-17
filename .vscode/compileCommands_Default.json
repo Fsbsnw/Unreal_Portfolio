@@ -1,0 +1,138 @@
+[
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Character\\Guardian\\RPGEnemyGuardian.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Character\\Guardian\\RPGEnemyGuardian.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Character\\PlayerCharacter\\RPGPlayerCharacter.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Character\\PlayerCharacter\\RPGPlayerCharacter.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Character\\RPGCharacterBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Character\\RPGCharacterBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Enemy\\RPGEnemyAIController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Enemy\\RPGEnemyAIController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Inventory\\InventoryInterface.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Inventory\\InventoryInterface.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Player\\RPGPlayerController.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\Player\\RPGPlayerController.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\RPG.Build.cs",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\RPG.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\RPG.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\RPGGameModeBase.cpp",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	},
+	{
+		"file": "D:\\unreal_study\\RPG\\Source\\RPG\\RPGGameModeBase.h",
+		"arguments": [
+			"C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.37.32822\\bin\\Hostx64\\x64\\cl.exe",
+			"@D:\\unreal_study\\RPG\\.vscode\\compileCommands_Default\\RPG.261.rsp"
+		],
+		"directory": "D:\\Epic Games\\UE_5.2\\Engine\\Source"
+	}
+]
