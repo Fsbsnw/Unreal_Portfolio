@@ -6,6 +6,7 @@
 #include "Spawn/EnemySpawnPoint.h"
 #include "Character/PlayerCharacter/RPGPlayerCharacter.h"
 #include "Character/Guardian/RPGEnemyGuardian.h"
+#include "Enemy/RPGEnemyAIController.h"
 
 void ARPGGameModeBase::BeginPlay()
 {
@@ -20,8 +21,23 @@ void ARPGGameModeBase::SpawnEnemy()
 {
     int32 idx = FMath::RandRange(0, SpawnPoints.Num() - 1);
     
+    float CurrentTime = UGameplayStatics::GetTimeSeconds(GetWorld());
+    if ((CurrentTime / 5) > Stage)
+    {
+        Stage++;       
+        MinCoolTime = FMath::Clamp(MinCoolTime - 0.5f , 0.5f, 10.f);
+        MaxCoolTime = FMath::Clamp(MaxCoolTime - 1.0f , 1.0f, 10.f);
+    }
 
-    GetWorld()->SpawnActor<ARPGEnemyGuardian>(GuardianClass, SpawnPoints[idx]->GetActorLocation(), SpawnPoints[idx]->GetActorRotation());
+    // Spawn and set lifespan
+    ARPGEnemyGuardian* Guardian = GetWorld()->SpawnActor<ARPGEnemyGuardian>(GuardianClass, SpawnPoints[idx]->GetActorLocation(), SpawnPoints[idx]->GetActorRotation());
+    if (Guardian) 
+    {        
+        Guardian->SetLifeSpan(5.f);
+    }
 
-    GetWorld()->GetTimerManager().SetTimer(SpawnEnemyHandle, this, &ARPGGameModeBase::SpawnEnemy, 2);
+    float SpawnCoolTime = FMath::RandRange(MinCoolTime, MaxCoolTime);
+    GetWorld()->GetTimerManager().SetTimer(SpawnEnemyHandle, this, &ARPGGameModeBase::SpawnEnemy, SpawnCoolTime);
+
+    UE_LOG(LogTemp, Warning, TEXT("Current Time : %f, Stage : %d"), CurrentTime, Stage);
 }
