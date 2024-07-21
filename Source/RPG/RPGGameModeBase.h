@@ -27,4 +27,7 @@ public:
 	void SpawnEnemy();
 
 	FTimerHandle SpawnEnemyHandle;
+	float MinCoolTime = 5.0f;
+	float MaxCoolTime = 10.0f;
+	int32 Stage;
 };

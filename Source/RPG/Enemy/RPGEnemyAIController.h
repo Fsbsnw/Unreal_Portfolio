@@ -16,7 +16,13 @@ class RPG_API ARPGEnemyAIController : public AAIController
 	
 protected:
 	virtual void BeginPlay() override;
+	virtual void OnPossess(APawn* InPawn) override;
 
 public:
 	virtual void Tick(float DeltaTime) override;
+
+	ACharacter* Player;
+
+	UPROPERTY(EditAnywhere, Category = "Radius")
+	float AttackRadius = 100.f;
 };
