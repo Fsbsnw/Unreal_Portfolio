@@ -5,18 +5,11 @@
 
 ARPGCharacterBase::ARPGCharacterBase()
 {
-	PrimaryActorTick.bCanEverTick = true;
-
+	
 }
 
 void ARPGCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
-}
-
-void ARPGCharacterBase::Tick(float DeltaTime)
-{
-	Super::Tick(DeltaTime);
-
 }

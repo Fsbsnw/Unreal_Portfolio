@@ -7,11 +7,13 @@
 #include "InputMappingContext.h"
 #include "GameFramework/Character.h"
 #include "../Character/PlayerCharacter/RPGPlayerCharacter.h"
+#include "RPG/Enemy/RPGEnemyInterface.h"
 
 void ARPGPlayerController::BeginPlay()
 {
     Super::BeginPlay();
 
+    PrimaryActorTick.bCanEverTick = true;    
     this->bShowMouseCursor = true;
 
 	Possess(Cast<APawn>(GetOwner()));
@@ -33,9 +35,11 @@ void ARPGPlayerController::SetupInputComponent()
     }
 }
 
-void ARPGPlayerController::Tick(float DeltaTime)
+void ARPGPlayerController::PlayerTick(float DeltaTime)
 {
-    RotateToCursor();
+    Super::PlayerTick(DeltaTime);
+
+    CursorTrace();
 }
 
 void ARPGPlayerController::RotateToCursor()
@@ -48,5 +52,41 @@ void ARPGPlayerController::RotateToCursor()
         FRotator ToTargetRotation = FRotator(0.f, ToTarget.Rotation().Yaw, 0.f);
 
         this->SetControlRotation(ToTargetRotation);
+    }
+}
+
+void ARPGPlayerController::CursorTrace()
+{
+    FHitResult HitResult;
+    bool bHit = GetHitResultUnderCursor(ECC_Visibility, false, HitResult);
+    if (!bHit) return;
+
+    // Actors class : TScriptInterface
+    LastActor = ThisActor;
+    ThisActor = HitResult.GetActor();
+
+    if (LastActor == nullptr)
+    {
+        if (ThisActor != nullptr)
+        {
+            ThisActor->HighlightActor();
+        }
+    }
+    // LastActor is valid
+    else
+    {
+        if (ThisActor != nullptr)
+        {
+            if (ThisActor != LastActor)
+            {
+                LastActor->UnHighlightActor();
+                ThisActor->HighlightActor();
+            }
+        }
+        // ThisActor is invalid
+        else
+        {
+            LastActor->UnHighlightActor();
+        }
     }
 }
