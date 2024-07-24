@@ -9,6 +9,7 @@
 
 class UInputAction;
 class UInputMappingContext;
+class IRPGEnemyInterface;
 
 /**
  * 
@@ -23,10 +24,15 @@ protected:
 	
 public:
 	virtual void SetupInputComponent() override;
-	virtual void Tick(float DeltaTime) override;
+	virtual void PlayerTick(float DeltaTime) override;
 
 	UPROPERTY(EditDefaultsOnly, Category = "Inputs")
 	UInputMappingContext* DefaultContext;
 
 	void RotateToCursor();
+
+	void CursorTrace();
+
+	TScriptInterface<IRPGEnemyInterface> LastActor;
+	TScriptInterface<IRPGEnemyInterface> ThisActor;
 };

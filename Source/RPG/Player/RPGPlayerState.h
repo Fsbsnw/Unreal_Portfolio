@@ -4,33 +4,29 @@
 
 #include "CoreMinimal.h"
 #include "AbilitySystemInterface.h"
-#include "GameFramework/Character.h"
-#include "RPGCharacterBase.generated.h"
+#include "GameFramework/PlayerState.h"
+#include "RPGPlayerState.generated.h"
 
 class UAbilitySystemComponent;
 class UAttributeSet;
 
+/**
+ * 
+ */
 UCLASS()
-class RPG_API ARPGCharacterBase : public ACharacter, public IAbilitySystemInterface
+class RPG_API ARPGPlayerState : public APlayerState, public IAbilitySystemInterface
 {
 	GENERATED_BODY()
 
 public:
-	ARPGCharacterBase();
+	ARPGPlayerState();
 	virtual UAbilitySystemComponent* GetAbilitySystemComponent() const override { return AbilitySystemComponent; }
 	UAttributeSet* GetAttributeSet() const { return AttributeSet; }
-
+	
 protected:
-	virtual void BeginPlay() override;
-
-public:
-	UPROPERTY(EditDefaultsOnly, Category = "Weapon")
-	TObjectPtr<USkeletalMeshComponent> Weapon;
-
 	UPROPERTY()
 	TObjectPtr<UAbilitySystemComponent> AbilitySystemComponent;
 
 	UPROPERTY()
 	TObjectPtr<UAttributeSet> AttributeSet;
-	
 };
