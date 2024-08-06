@@ -2,8 +2,13 @@
 
 
 #include "RPGPlayerCharacter.h"
+
+#include "AbilitySystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "RPG/Player/RPGPlayerController.h"
+#include "RPG/Player/RPGPlayerState.h"
+#include "RPG/UI/HUD/RPGHUD.h"
 
 ARPGPlayerCharacter::ARPGPlayerCharacter()
 {
@@ -14,6 +19,38 @@ ARPGPlayerCharacter::ARPGPlayerCharacter()
 
     Camera = CreateDefaultSubobject<UCameraComponent>("Camera");
     Camera->SetupAttachment(SpringArm);
+}
+
+void ARPGPlayerCharacter::PossessedBy(AController* NewController)
+{
+    Super::PossessedBy(NewController);
+
+    InitAbilityActorInfo();
+}
+
+void ARPGPlayerCharacter::OnRep_PlayerState()
+{
+    Super::OnRep_PlayerState();
+
+    InitAbilityActorInfo();
+}
+
+void ARPGPlayerCharacter::InitAbilityActorInfo()
+{
+    ARPGPlayerState* RPGPlayerState = GetPlayerState<ARPGPlayerState>();
+    check(RPGPlayerState);
+
+    RPGPlayerState->GetAbilitySystemComponent()->InitAbilityActorInfo(RPGPlayerState, this);
+    AbilitySystemComponent = RPGPlayerState->GetAbilitySystemComponent();
+    AttributeSet = RPGPlayerState->GetAttributeSet();
+
+    if (ARPGPlayerController* RPGPlayerController = Cast<ARPGPlayerController>(GetController()))
+    {
+        if (ARPGHUD* ARPHUD = Cast<ARPGHUD>(RPGPlayerController->GetHUD()))
+        {
+            ARPHUD->InitOverlay(RPGPlayerController, RPGPlayerState, AbilitySystemComponent, AttributeSet);
+        }
+    }
 }
 
 void ARPGPlayerCharacter::BeginPlay()

@@ -25,13 +25,12 @@ protected:
 public:
 	virtual void Tick(float DeltaTime) override;
 
+	// Enemy Interface
 	virtual void HighlightActor() override;
 	virtual void UnHighlightActor() override;
 	
 	UPROPERTY(EditDefaultsOnly, Category = "Controller")
 	TSubclassOf<class ARPGEnemyAIController> EnemyAIControllerClass;
-
-	class ARPGEnemyAIController* AIController;
 
 	UFUNCTION()
 	void Attack();

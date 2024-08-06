@@ -18,7 +18,7 @@ void ARPGPlayerController::BeginPlay()
 
 	Possess(Cast<APawn>(GetOwner()));
 
-    // IMC 초기화
+    // IMC 초기화, 서버에서 이걸 실행하면 GetLocalPlayer에 대한 리턴이 없을 수 있음
 	if (UEnhancedInputLocalPlayerSubsystem* Subsystem = ULocalPlayer::GetSubsystem<UEnhancedInputLocalPlayerSubsystem>(GetLocalPlayer()))
     {
 		Subsystem->AddMappingContext(DefaultContext, 0);

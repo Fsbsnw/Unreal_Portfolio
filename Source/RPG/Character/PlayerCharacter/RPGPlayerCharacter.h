@@ -19,6 +19,8 @@ class RPG_API ARPGPlayerCharacter : public ARPGCharacterBase
 
 public:
 	ARPGPlayerCharacter();
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
 	
 protected:
 	virtual void BeginPlay() override;
@@ -34,4 +36,6 @@ public:
 
     UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Path")
     TArray<AActor*> PathPoints;
+
+	void InitAbilityActorInfo();
 };

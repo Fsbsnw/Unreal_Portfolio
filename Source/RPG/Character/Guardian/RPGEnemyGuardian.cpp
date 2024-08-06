@@ -12,6 +12,7 @@ ARPGEnemyGuardian::ARPGEnemyGuardian()
     
     AbilitySystemComponent = CreateDefaultSubobject<URPGAbilitySystemComponent>("AbilitySystemComponent");
     AbilitySystemComponent->SetIsReplicated(true);
+    AbilitySystemComponent->SetReplicationMode(EGameplayEffectReplicationMode::Minimal);
 
     AttributeSet = CreateDefaultSubobject<URPGAttributeSet>("AttributeSet"); 
 }
@@ -20,12 +21,12 @@ void ARPGEnemyGuardian::BeginPlay()
 {
     Super::BeginPlay();
 
-    AIController = GetWorld()->SpawnActor<ARPGEnemyAIController>(EnemyAIControllerClass);
-
-    if (AIController)
+    if (ARPGEnemyAIController* AIController = GetWorld()->SpawnActor<ARPGEnemyAIController>(EnemyAIControllerClass))
     {
         AIController->Possess(this);
     }
+    
+    AbilitySystemComponent->InitAbilityActorInfo(this, this);
 }
 
 void ARPGEnemyGuardian::EndPlay(const EEndPlayReason::Type EndPlayReason)
